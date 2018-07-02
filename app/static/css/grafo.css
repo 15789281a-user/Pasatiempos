@@ -18,13 +18,30 @@
 }
 
 
-#myCanvas {
+#myCanvas_first {
     position: absolute;
     top: 140px;
     left: 80px;
     z-index: -1;
 }
 
-input { 
+#myCanvas_second {
+    position: absolute;
+    top: 140px;
+    left: 80px;
+    z-index: -1;
+}
+
+
+.input { 
     text-align: center;
+}
+
+#first {
+    position: absolute;
+}
+
+#second {
+    position: absolute;
+    top: 800px;
 }
