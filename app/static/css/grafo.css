@@ -1,0 +1,30 @@
+#circle {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 27px;
+    -moz-border-radius: 27px;
+    border-radius: 27px;
+    border: 3px solid black;
+    position: absolute;
+    font-size: 20px;        
+}
+
+#square {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    position: absolute;
+    font-size: 30px;    
+}
+
+
+#myCanvas {
+    position: absolute;
+    top: 140px;
+    left: 80px;
+    z-index: -1;
+}
+
+input { 
+    text-align: center;
+}
