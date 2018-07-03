@@ -1,7 +1,5 @@
 sol = [0]*9
-data = [18, 16, 23, 10, 13, 14, 16]
 used = [False]*10
-cont = 0
 connect = [
     [0, 1, 2],
     [0, 2, 3, 5],
@@ -11,9 +9,10 @@ connect = [
     [4, 6, 8],
     [5, 6, 7, 8],
 ]
+cont = 0
 
 
-def check():
+def check(data):
     for i in range(0, 7):
         filled = True
         value = 0
@@ -24,20 +23,21 @@ def check():
     return True
 
 
-def solve(i):
+def solve(i, data):
     if i == 9:
-        # cont += 1
-        return print(sol)
+        sol_file = open('app/tmp/sol_file.txt', 'a')
+        sol_file.write(str(sol))
+        return
 
     for j in range(1, 10):
         if not used[j]:
             sol[i] = j
             used[j] = True
-            if (check()): solve(i + 1)
+            if (check(data)): solve(i + 1, data)
             sol[i] = 0
             used[j] = False
 
-            
-solve(0)
-if cont == 0:
-    print('No se ha encontrado ninguna solución.')
+
+def main(data):
+    open('app/tmp/sol_file.txt', 'w').close()
+    solve(0, data)

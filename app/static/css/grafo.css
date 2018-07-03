@@ -17,31 +17,36 @@
     font-size: 30px;    
 }
 
-
-#myCanvas_first {
+#myCanvas1 {
     position: absolute;
     top: 140px;
     left: 80px;
     z-index: -1;
 }
 
-#myCanvas_second {
+#myCanvas2 {
     position: absolute;
     top: 140px;
     left: 80px;
     z-index: -1;
 }
 
-
-.input { 
+input { 
     text-align: center;
 }
 
-#first {
-    position: absolute;
+p {
+    position: relative;
+    top: 100px;
 }
 
-#second {
+#positioner {
     position: absolute;
-    top: 800px;
+    top: 0px;
+}
+
+button {
+    position: absolute;
+    top: 600px;
+    left: 250px;
 }

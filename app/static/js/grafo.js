@@ -1,4 +1,4 @@
-var canvas = document.getElementById("myCanvas_first");
+var canvas = document.getElementById("myCanvas1");
 var ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 4;
@@ -36,7 +36,7 @@ ctx.lineTo(350, 400);
 ctx.stroke();
 
 
-var canvas = document.getElementById("myCanvas_second");
+var canvas = document.getElementById("myCanvas2");
 var ctx = canvas.getContext("2d");
 
 ctx.lineWidth = 4;

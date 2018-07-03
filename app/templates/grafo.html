@@ -2,64 +2,75 @@
 
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Grafo - David Álvarez</title>
     <link rel="stylesheet" type="text/css" href="../static/css/grafo.css">
   </head>
   
   <body>
     <h1 align="center">Grafo - David Álvarez</h1>
-
-    <div id="first">
-      <form action="/sol" method="post">
-	<input id="circle" name="s0" style="top: 150px; left: 200px;">
-	<input id="circle" name="s1" style="top: 150px; left: 350px;">
-	<input id="circle" name="s2" style="top: 250px; left: 275px;">
-	<input id="circle" name="s3" style="top: 325px; left: 75px;">
-	<input id="circle" name="s4" style="top: 325px; left: 475px;">
-	<input id="circle" name="s5" style="top: 375px; left: 200px;">
-	<input id="circle" name="s6" style="top: 375px; left: 350px;">
-	<input id="circle" name="s7" style="top: 500px; left: 175px;">
-	<input id="circle" name="s8" style="top: 500px; left: 400px;">
-
-	<input id="square" name="i0" style="top: 180px; left: 275px;" value="18">
-	<input id="square" name="i1" style="top: 260px; left: 160px;" value="16">
-	<input id="square" name="i2" style="top: 260px; left: 400px;" value="23">
-	<input id="square" name="i3" style="top: 340px; left: 275px;" value="10">
-	<input id="square" name="i4" style="top: 410px; left: 140px;" value="13">
-	<input id="square" name="i5" style="top: 410px; left: 420px;" value="14">
-	<input id="square" name="i6" style="top: 475px; left: 275px;" value="16">
-
-	<canvas id="myCanvas_first" width="500" height="500"></canvas>
-	<button type="submit">RESOLVER GRAFO</button>
-      </form>
-    </div>
     
-    <div id="second">
-      <form action="/sol" method="post">
-	<input id="circle" name="s0" style="top: 150px; left: 200px;">
-	<input id="circle" name="s1" style="top: 150px; left: 350px;">
-	<input id="circle" name="s2" style="top: 250px; left: 275px;">
-	<input id="circle" name="s3" style="top: 325px; left: 75px;">
-	<input id="circle" name="s4" style="top: 325px; left: 475px;">
-	<input id="circle" name="s5" style="top: 375px; left: 200px;">
-	<input id="circle" name="s6" style="top: 375px; left: 350px;">
-	<input id="circle" name="s7" style="top: 500px; left: 175px;">
-	<input id="circle" name="s8" style="top: 500px; left: 400px;">
+    <table width="100%" height="100%"><tr>
+	<td width="50%">
+	  <div id="positioner">
+	    <!-- <br><br><br><br> -->
+	    <!-- <h3>Resuelve el grafo</h3> -->
+	    <form action="/sol" method="post">
+	      <input id="circle" name="s0" style="top: 150px; left: 200px;">
+	      <input id="circle" name="s1" style="top: 150px; left: 350px;">
+	      <input id="circle" name="s2" style="top: 250px; left: 275px;">
+	      <input id="circle" name="s3" style="top: 325px; left: 75px;">
+	      <input id="circle" name="s4" style="top: 325px; left: 475px;">
+	      <input id="circle" name="s5" style="top: 375px; left: 200px;">
+	      <input id="circle" name="s6" style="top: 375px; left: 350px;">
+	      <input id="circle" name="s7" style="top: 500px; left: 175px;">
+	      <input id="circle" name="s8" style="top: 500px; left: 400px;">
 
-	<input id="square" name="i0" style="top: 180px; left: 275px;" value="18">
-	<input id="square" name="i1" style="top: 260px; left: 160px;" value="16">
-	<input id="square" name="i2" style="top: 260px; left: 400px;" value="23">
-	<input id="square" name="i3" style="top: 340px; left: 275px;" value="10">
-	<input id="square" name="i4" style="top: 410px; left: 140px;" value="13">
-	<input id="square" name="i5" style="top: 410px; left: 420px;" value="14">
-	<input id="square" name="i6" style="top: 475px; left: 275px;" value="16">
+	      <input id="square" name="i0" style="top: 180px; left: 275px;" required>
+	      <input id="square" name="i1" style="top: 260px; left: 160px;" required>
+	      <input id="square" name="i2" style="top: 260px; left: 400px;" required>
+	      <input id="square" name="i3" style="top: 340px; left: 275px;" required>
+	      <input id="square" name="i4" style="top: 410px; left: 140px;" required>
+	      <input id="square" name="i5" style="top: 410px; left: 420px;" required>
+	      <input id="square" name="i6" style="top: 475px; left: 275px;" required>
 
-	<canvas id="myCanvas_second" width="500" height="500"></canvas>
+	      <canvas id="myCanvas1" width="500" height="500"></canvas>
+	      <button type="submit">RESOLVER GRAFO</button>
+	    </form>
+	  </div>
+	</td>
 	
-	<button type="submit">RESOLVER GRAFO</button>
-      </form>
-    </div>
+	<td width="50%">
+	  <div id="positioner">
+	    <!-- <br><br><br><br> -->
+	    <!-- <h3 align="center">Comprueba la solución</h3> -->
+	    <form action="/comp" method="post">
+	      <input id="circle" name="s0" style="top: 150px; left: 200px;" required>
+	      <input id="circle" name="s1" style="top: 150px; left: 350px;" required>
+	      <input id="circle" name="s2" style="top: 250px; left: 275px;" required>
+	      <input id="circle" name="s3" style="top: 325px; left: 75px;" required>
+	      <input id="circle" name="s4" style="top: 325px; left: 475px;" required>
+	      <input id="circle" name="s5" style="top: 375px; left: 200px;" required>
+	      <input id="circle" name="s6" style="top: 375px; left: 350px;" required>
+	      <input id="circle" name="s7" style="top: 500px; left: 175px;" required>
+	      <input id="circle" name="s8" style="top: 500px; left: 400px;" required>
 
+	      <input id="square" name="i0" style="top: 180px; left: 275px;" required>
+	      <input id="square" name="i1" style="top: 260px; left: 160px;" required>
+	      <input id="square" name="i2" style="top: 260px; left: 400px;" required>
+	      <input id="square" name="i3" style="top: 340px; left: 275px;" required>
+	      <input id="square" name="i4" style="top: 410px; left: 140px;" required>
+	      <input id="square" name="i5" style="top: 410px; left: 420px;" required>
+	      <input id="square" name="i6" style="top: 475px; left: 275px;" required>
+
+	      <canvas id="myCanvas2" width="500" height="500"></canvas>
+	      <button>COMPROBAR SOLUCIÓN</button>
+	    </form>
+	  </div>
+	</td>
+    </tr></table>
+
+    
     <script src="../static/js/grafo.js"></script>    
   </body>
 </html>
