@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Grafo - David Álvarez</title>
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/grafo.css">
+    <style type="text/css">
+      {% for i in range(1, n + 1) %}
+      #positioner{{ i }} {
+      position: absolute;
+      top: {{ 550*(i - 1) }}px;
+      left: 30%;
+      }
+      {% endfor %}
+      {% for i in range(1, n + 1) %}
+      #myCanvas{{ i }} {
+      position: absolute;
+      top: 140px;
+      left: 80px;
+      z-index: -1;
+      }
+      {% endfor %}
+    </style>
+  </head>
+
+  <body background="../static/img/background.jpg">  
+    <h1 align="center">Grafo - David Álvarez</h1>
+	
+    {% for i in range(0, n) %}
+    <div id="positioner{{ i + 1 }}">
+      <p>Grafo número {{ i + 1 }}:</p>
+      <input id="circle" name="s0" style="top: 150px; left: 200px;">
+      <input id="circle" name="s1" style="top: 150px; left: 350px;">
+      <input id="circle" name="s2" style="top: 250px; left: 275px;">
+      <input id="circle" name="s3" style="top: 325px; left: 75px;">
+      <input id="circle" name="s4" style="top: 325px; left: 475px;">
+      <input id="circle" name="s5" style="top: 375px; left: 200px;">
+      <input id="circle" name="s6" style="top: 375px; left: 350px;">
+      <input id="circle" name="s7" style="top: 500px; left: 175px;">
+      <input id="circle" name="s8" style="top: 500px; left: 400px;">
+
+      <input id="square" name="i0" style="top: 180px; left: 275px;" value="{{ grafos[i][0] }}">
+      <input id="square" name="i1" style="top: 260px; left: 160px;" value="{{ grafos[i][1] }}">
+      <input id="square" name="i2" style="top: 260px; left: 400px;" value="{{ grafos[i][2] }}">
+      <input id="square" name="i3" style="top: 340px; left: 275px;" value="{{ grafos[i][3] }}">
+      <input id="square" name="i4" style="top: 410px; left: 140px;" value="{{ grafos[i][4] }}">
+      <input id="square" name="i5" style="top: 410px; left: 420px;" value="{{ grafos[i][5] }}">
+      <input id="square" name="i6" style="top: 475px; left: 275px;" value="{{ grafos[i][6] }}">
+
+      <canvas id="myCanvas{{ i + 1 }}" width="500" height="500"></canvas>
+    </div>
+    {% endfor %}
+
+    <script src="../static/js/grafo.js"></script>	
+
+    <script type="text/javascript">
+      {% for i in range(3, n + 1) %}  
+      var canvas = document.getElementById("myCanvas{{ i }}");
+      var ctx = canvas.getContext("2d");
+
+      ctx.lineWidth = 4;
+
+      ctx.beginPath();
+      ctx.arc(220, 220, 200, 0, 2*Math.PI);
+      ctx.stroke()
+
+      ctx.beginPath();
+      ctx.arc(220, 220, 90, 0, 2*Math.PI);
+      ctx.stroke()
+
+      ctx.moveTo(142, 40);
+      ctx.lineTo(210, 125);
+      ctx.stroke();
+
+      ctx.moveTo(290, 40);
+      ctx.lineTo(230, 125);
+      ctx.stroke();
+
+      ctx.moveTo(20, 215);
+      ctx.lineTo(130, 260);
+      ctx.stroke();
+
+      ctx.moveTo(140, 270);
+      ctx.lineTo(120, 380);
+      ctx.stroke();
+
+      ctx.moveTo(300, 260);
+      ctx.lineTo(400, 220);
+      ctx.stroke();
+
+      ctx.moveTo(300, 260);
+      ctx.lineTo(350, 400);
+      ctx.stroke();
+      {% endfor %}
+    </script>
+  </body>
+</html>
