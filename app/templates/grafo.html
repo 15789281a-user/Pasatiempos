@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/grafo.css">
   </head>
   
-  <body>
+  <body background="../static/img/background.jpg">
     <h1 align="center">Grafo - David Álvarez</h1>
     
     <table width="100%" height="100%"><tr>
@@ -15,7 +15,7 @@
 	  <div id="positioner">
 	    <!-- <br><br><br><br> -->
 	    <!-- <h3>Resuelve el grafo</h3> -->
-	    <form action="/sol" method="post">
+	    <form action="/solucionador" method="post">
 	      <input id="circle" name="s0" style="top: 150px; left: 200px;">
 	      <input id="circle" name="s1" style="top: 150px; left: 350px;">
 	      <input id="circle" name="s2" style="top: 250px; left: 275px;">
@@ -44,7 +44,7 @@
 	  <div id="positioner">
 	    <!-- <br><br><br><br> -->
 	    <!-- <h3 align="center">Comprueba la solución</h3> -->
-	    <form action="/comp" method="post">
+	    <form action="/comprobador" method="post">
 	      <input id="circle" name="s0" style="top: 150px; left: 200px;" required>
 	      <input id="circle" name="s1" style="top: 150px; left: 350px;" required>
 	      <input id="circle" name="s2" style="top: 250px; left: 275px;" required>
@@ -64,12 +64,17 @@
 	      <input id="square" name="i6" style="top: 475px; left: 275px;" required>
 
 	      <canvas id="myCanvas2" width="500" height="500"></canvas>
-	      <button>COMPROBAR SOLUCIÓN</button>
+	      <button type="submit">COMPROBAR SOLUCIÓN</button>
 	    </form>
 	  </div>
 	</td>
-    </tr></table>
+      </tr></table>
 
+    <form action="/generador">
+      <button type="submit" style="position: absolute; top: 610px; left: 620px;">
+	GENERAR GRAFO
+      </button>
+    </form>
     
     <script src="../static/js/grafo.js"></script>    
   </body>
