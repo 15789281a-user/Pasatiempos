@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sudoku - David Álvarez</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/sudoku.css">    
+  </head>
+
+  <body background="../static/img/background.jpg">
+    <h1 align="center">Sudoku - David Álvarez</h1>
+
+    <br>    
+    {% if n == 0 %}
+    <p align="center">No existe solución.</p>
+    {% endif %}
+
+    {% for k in range(0, n) %}
+    {% if n == 1 %}
+    <p align="center">Solución única:</p>    
+    {% else %}
+    <p align="center">Solución número {{ k + 1 }}:</p>
+    {% endif %}
+    <table align="center" id="externo">
+      {% for i in range(0, 9) %}
+      {% if i == 2 or i == 5 %}
+      <tr id="grande">
+    	{% else %}
+      <tr id="normal">
+    	{% endif %}
+    	{% for j in range(0, 9) %}
+    	{% if j == 2 or j == 5 %}
+    	<td id="lateral_gran">
+    	  {% else %}
+    	<td id="lateral_nor">
+    	  {% endif %}
+    	  {% if data[i][j] == 0 %}	  
+	  <input style="color: red;" value="{{ sols[k][i][j] }}"></td>
+	{% else %}
+	<input value="{{ sols[k][i][j] }}"></td>
+    	{% endif %}	
+    	{% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    <br><br><br>
+    {% endfor %}
+    
+  </body>
+</html>

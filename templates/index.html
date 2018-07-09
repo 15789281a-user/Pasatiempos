@@ -4,6 +4,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Pasatiempos - David Álvarez</title>
+    <style type="text/css">
+      button {
+      font-size: 25px;
+      font-weight: bold;
+      border: 2px solid gray;
+      }
+    </style>
   </head>
 
   <body background="../static/img/background.jpg">
@@ -11,12 +18,16 @@
     <br><br><br><br>
     
     <form action="/grafo">
-      <button type="submit" style="position: relative; left: 620px;">GRAFO</button>      
+      <div align="center">
+	<button type="submit">GRAFO</button>      	
+      </div>
     </form>
 
     <br><br><br><br>
     <form action="/sudoku">
-      <button type="submit" style="position: relative; left: 615px;">SUDOKU</button>
+      <div align="center">
+	<button type="submit">SUDOKU</button>
+      </div>
     </form>
     
   </body>

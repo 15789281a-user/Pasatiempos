@@ -1,0 +1,59 @@
+#square {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    /* position: absolute; */
+    font-size: 30px;
+}
+
+input {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: transparent !important;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#positioner {
+    position: relative;
+}
+
+#normal {
+    border: solid thin black;
+}
+
+#grande {
+    border-bottom: solid medium black;
+}
+
+#lateral_nor {
+    border-right: solid thin black;
+}
+
+#lateral_gran {
+    border-right: solid medium black;
+}
+
+#externo {
+    border: solid medium black;
+}
+
+table, th, td {
+    padding: 0px;
+    border-collapse: collapse;
+    font-family: Calibri, sans-serif;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

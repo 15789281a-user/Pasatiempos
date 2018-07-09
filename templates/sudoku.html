@@ -1,0 +1,263 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sudoku - David Álvarez</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/sudoku.css">
+  </head>
+
+  <body background="../static/img/background.jpg">
+    <h1 align="center">Sudoku - David Álvarez</h1>
+    <br><br><br><br>
+
+    <table width="100%" height="100%"><tr>
+	<td width="50%">
+	  <form action="/sudoku/solucionador" method="post">
+	    <table align="center" id="externo">
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="00" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="01" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="02" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="03" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="04" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="05" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="06" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="07" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="08" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="10" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="11" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="12" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="13" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="14" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="15" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="16" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="17" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="18" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="grande">
+		<td id="lateral_nor"><input name="20" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="21" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="22" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="23" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="24" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="25" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="26" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="27" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="28" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="30" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="31" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="32" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="33" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="34" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="35" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="36" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="37" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="38" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="40" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="41" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="42" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="43" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="44" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="45" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="46" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="47" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="48" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="grande">
+		<td id="lateral_nor"><input name="50" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="51" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="52" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="53" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="54" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="55" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="56" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="57" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="58" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="60" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="61" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="62" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="63" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="64" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="65" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="66" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="67" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="68" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="70" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="71" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="72" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="73" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="74" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="75" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="76" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="77" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="78" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr>
+		<td id="lateral_nor"><input name="80" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="81" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="82" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="83" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="84" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="85" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="86" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="87" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="88" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+	    </table>
+	    
+	    <br><br><br>
+	    <div align="center">
+	      <button type="submit">RESOLVER SUDOKU</button>
+	    </div>
+	  </form>
+	</td>
+	
+	<td width="50%">
+	  <form action="/sudoku/comprobador" method="post">
+	    <table align="center" id="externo">
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="00" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="01" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="02" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="03" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="04" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="05" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="06" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="07" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="08" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="10" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="11" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="12" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="13" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="14" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="15" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="16" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="17" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="18" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="grande">
+		<td id="lateral_nor"><input name="20" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="21" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="22" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="23" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="24" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="25" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="26" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="27" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="28" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="30" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="31" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="32" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="33" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="34" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="35" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="36" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="37" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="38" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="40" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="41" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="42" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="43" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="44" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="45" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="46" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="47" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="48" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="grande">
+		<td id="lateral_nor"><input name="50" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="51" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="52" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="53" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="54" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="55" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="56" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="57" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="58" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="60" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="61" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="62" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="63" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="64" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="65" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="66" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="67" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="68" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr id="normal">
+		<td id="lateral_nor"><input name="70" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="71" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="72" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="73" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="74" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="75" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="76" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="77" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="78" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+
+	      <tr>
+		<td id="lateral_nor"><input name="80" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="81" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="82" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="83" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="84" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_gran"><input name="85" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="86" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="87" onkeypress="return justNumbers(event)" type="number"></td>
+		<td id="lateral_nor"><input name="88" onkeypress="return justNumbers(event)" type="number"></td>
+	      </tr>
+	    </table>
+	    
+	    <br><br><br>
+	    <div align="center">
+	      <button type="submit">COMPROBAR SOLUCIÓN</button>
+	    </div>
+	  </form>
+	</td>
+    </tr></table>
+
+    <form action="/sudoku/generador", method="post">
+      <button type="submit" style="position: absolute; top: 600px; left: 620px;">
+	GENERAR SUDOKU
+      </button>
+    </form>
+
+    <script src="../static/js/numeros.js"></script>    
+    
+  </body>
+</html>

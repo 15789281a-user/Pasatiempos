@@ -1,3 +1,5 @@
+sols = []
+data = [0]*7
 sol = [0]*9
 used = [False]*10
 connect1 = [
@@ -33,21 +35,28 @@ def check(data, i, j):
     return True
 
 
-def solve(i, data):
+def solve(i):
     if i == 9:
-        sol_file = open('app/tmp/sol_file.txt', 'a')
-        sol_file.write(str(sol))
+        # sol_file = open('Pasatiempos/tmp/gr_sol_file.txt', 'a')
+        # sol_file.write(str(sol))
+        sols.append([])
+        for i in range(0, 9):
+            sols[len(sols) - 1].append(sol[i])
         return
 
     for j in range(1, 10):
         if not used[j]:
             sol[i] = j
             used[j] = True
-            if (check(data, i, j)): solve(i + 1, data)
+            if (check(data, i, j)): solve(i + 1)
             sol[i] = 0
             used[j] = False
 
 
-def main(data):
-    open('app/tmp/sol_file.txt', 'w').close()
-    solve(0, data)
+def main(data_input):
+    # open('Pasatiempos/tmp/gr_sol_file.txt', 'w').close()
+    for i in range(0, 7):
+        data[i] = data_input[i]
+        
+    solve(0)
+    return sols
